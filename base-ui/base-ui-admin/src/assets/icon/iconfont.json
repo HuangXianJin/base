@@ -1,0 +1,23 @@
+{
+  "id": "1679404",
+  "name": "base-ui-admin",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "13338523",
+      "name": "proprietor",
+      "font_class": "proprietor",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "13338547",
+      "name": "renter",
+      "font_class": "renter",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    }
+  ]
+}

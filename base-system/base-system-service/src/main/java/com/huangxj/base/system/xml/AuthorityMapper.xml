@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huangxj.base.system.mapper.AuthorityMapper">
+
+    <resultMap id="AuthorityResource" type="com.huangxj.common.core.security.AuthorityResource">
+        <result column="path" jdbcType="VARCHAR" property="path"/>
+        <result column="authority" jdbcType="VARCHAR" property="authority"/>
+        <result column="service_id" jdbcType="VARCHAR" property="serviceId"/>
+        <result column="is_auth" jdbcType="INTEGER" property="isAuth"/>
+        <result column="is_open" jdbcType="INTEGER" property="isOpen"/>
+        <result column="prefix" jdbcType="VARCHAR" property="prefix"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, authority, menu_id, api_id, status, create_id, create_time, modify_id, modify_time
+    </sql>
+    <!-- 自定义关联查询分页 -->
+    <select id="select" resultType="com.huangxj.base.system.dto.AuthorityDto">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM sys_authority
+    </select>
+
+    <!--获取角色的权限-->
+    <select id="selectAuthorityByRole" resultType="com.huangxj.common.core.security.AuthAuthority">
+        SELECT
+            a.*,
+            ao.expire_time,
+            'role' AS OWNER
+        FROM
+            sys_authority_owner AS ao
+        INNER JOIN sys_authority AS a ON ao.authority = a.authority
+        WHERE
+            ao.role_id = #{roleId}
+        AND a. STATUS = 1
+    </select>
+
+    <!--获取菜单的权限-->
+    <select id="selectAuthorityByMenu" resultType="com.huangxj.common.core.security.AuthAuthority">
+        SELECT
+        a.*,
+        ao.expire_time,
+        'menu' AS OWNER
+        FROM
+        sys_authority_owner AS ao
+        INNER JOIN sys_authority AS a ON ao.authority = a.authority
+        WHERE
+        ao.menu_id in
+        <foreach collection="menuIds" item="item" index="index" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+        AND a. STATUS = 1
+    </select>
+
+    <!--获取app的权限-->
+    <select id="selectAuthorityByApp" resultType="com.huangxj.common.core.security.AuthAuthority">
+        SELECT
+            a.*,
+            ao.expire_time,
+            'app' AS OWNER
+        FROM
+            sys_authority_owner AS ao
+        INNER JOIN sys_authority AS a ON ao.authority = a.authority
+        WHERE
+            ao.app_id = #{appId}
+        AND a. STATUS = 1
+    </select>
+
+    <!--获取租户的权限-->
+    <select id="selectAuthorityByTenantCode" resultType="com.huangxj.common.core.security.AuthAuthority">
+        SELECT
+            a.*,
+            ao.expire_time,
+            'tenant' AS OWNER
+        FROM
+            sys_authority_owner AS ao
+        INNER JOIN sys_authority AS a ON ao.authority = a.authority
+        WHERE
+            ao.tenant_code = #{tenantCode}
+        AND a. STATUS = 1
+    </select>
+
+    <!--获取所有api资源-->
+    <select id="selectApiAuthority" resultType="com.huangxj.base.system.dto.ApiDto">
+        SELECT
+            auth.id authorityId,
+            auth.authority,
+            api.*
+        FROM
+            sys_authority auth
+        INNER JOIN
+             sys_api api ON api.id = auth.api_id
+    </select>
+
+    <!--获取所有menu资源-->
+    <select id="selectMenuAuthority" resultType="com.huangxj.base.system.dto.MenuDto">
+        SELECT
+            auth.id authorityId,
+            auth.authority,
+            menu.*
+        FROM
+            sys_authority auth
+        INNER JOIN
+             sys_menu menu ON menu.id = auth.menu_id
+    </select>
+
+</mapper>

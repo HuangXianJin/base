@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huangxj.base.system.mapper.FileMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, attachment_code, origin_name, file_size, file_type, url, description, operation, operator, operate_time, create_id, create_time, modify_id, modify_time, status
+    </sql>
+    <!-- 自定义关联查询分页 -->
+    <select id="select" resultType="com.huangxj.base.system.dto.SysFileDto">
+        SELECT <include refid="Base_Column_List" />
+        FROM sys_file
+        <where>
+            <if test="queryParam.originName != null and queryParam.originName != ''">
+                and concat(
+                IFNULL(origin_name, '')
+                ) like concat('%',#{queryParam.originName},'%')
+            </if>
+            <if test=" queryParam.startDate != null  ">
+                <![CDATA[ and DATE_FORMAT(operate_time,'%Y-%m-%d') >= DATE_FORMAT(#{queryParam.startDate},'%Y-%m-%d')]]>
+            </if>
+            <if test=" queryParam.endDate != null">
+                <![CDATA[ and DATE_FORMAT(operate_time,'%Y-%m-%d') <= DATE_FORMAT(#{queryParam.endDate},'%Y-%m-%d')]]>
+            </if>
+        </where>
+    </select>
+</mapper>

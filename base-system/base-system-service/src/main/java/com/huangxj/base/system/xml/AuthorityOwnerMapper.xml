@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huangxj.base.system.mapper.AuthorityOwnerMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, authority, role_id, app_id, tenant_code, expire_time, create_id, create_time, modify_id, modify_time
+    </sql>
+    <!-- 自定义关联查询分页 -->
+    <select id="select" resultType="com.huangxj.base.system.dto.AuthorityOwnerDto">
+        SELECT <include refid="Base_Column_List" />
+        FROM sys_authority_owner
+    </select>
+</mapper>

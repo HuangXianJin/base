@@ -1,0 +1,43 @@
+#set($voPackage=$package.Entity.replace("entity","vo"))
+package $!{voPackage};
+
+import java.util.*;
+#if($!{entityLombokModel})
+import lombok.Data;
+#end
+#if(${swagger2})
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+#end
+import java.io.Serializable;
+
+/**
+ * $!{table.comment}视图实体类
+ *
+ * @author $!{author}
+ * @since $!{date}
+ */
+#if($!{entityLombokModel})
+@Data
+#end
+#if($!{swagger2})
+@ApiModel(value = "$!{entity}VO对象", description = #if ("$!{table.comment}"=="")"$!{entity}VO对象"#else"$!{table.comment}"#end)
+#end
+public class $!{entity}Vo implements Serializable {
+## ----------  BEGIN 字段循环遍历  ----------
+#foreach($field in ${table.fields})
+#if("$!field.propertyName" != "createId" && "$!field.propertyName" != "createTime" && "$!field.propertyName" != "modifyTime" && "$!field.propertyName" != "modifyId" && "$!field.propertyName" != "isPersist")
+ #if("$!field.comment" != "")
+#if(${swagger2})
+    @ApiModelProperty(value = "${field.comment}")
+#else
+/**
+ * ${field.comment}
+ */
+#end
+#end
+    private ${field.propertyType} ${field.propertyName};
+#end
+#end
+
+}

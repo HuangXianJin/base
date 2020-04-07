@@ -1,0 +1,13 @@
+version: '3'
+services:
+  base-application:
+    image: huangxj/base-application:latest
+    privileged: true
+    restart: always
+    network_mode: host
+    ports:
+      - 8200:8200
+    volumes:
+      - /docker/huangxj-base/log:/app/ers/log
+    environment:
+      - TZ=Asia/Shanghai

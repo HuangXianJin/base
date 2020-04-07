@@ -1,0 +1,1 @@
+call base-ui/base-ui-admin/build-test-upload.bat

@@ -1,0 +1,53 @@
+/**
+*文件用途说明：疫情防控系统
+*作者：鳄鱼仔
+*制作日期：2020.02.17
+**/
+
+.my-mess {position:relative;display:-webkit-box;display:-webkit-flex;display:flex;}
+.my-mess-center {-webkit-box-align:center;-webkit-align-items:center;align-items:center;}
+.my-mess .my-mess-left {position:relative;}
+.my-mess .my-mess-right {-webkit-box-flex:1;-webkit-flex:1;flex:1;word-break:break-all;word-wrap:break-word;}
+
+/*详情窗口*/
+.my-windows-detail .my-mess{
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+}
+.my-windows-detail .my-mess-left{
+    width: 100px;
+    text-align: right;
+    white-space: nowrap;
+    font-weight: bold;
+    padding-right: 10px;
+}
+.my-windows-detail-six .my-mess-left{
+    width: 120px;
+}
+.my-windows-detail-eight .my-mess-left{
+    width: 160px;
+}
+
+.my-windows-detail .my-mess-right{
+    line-height: 22px;
+}
+.my-windows-detail-form .el-form-item__label {
+    font-size: 16px;
+    color: #333;
+}
+.my-windows-detail .my-mess-item{
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+}
+.my-windows-detail .my-mess-item-title{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.my-mess-line {
+    width: 100%;
+    height: 1px;
+    background: #e5e5e5;
+    margin: 20px 0;
+}

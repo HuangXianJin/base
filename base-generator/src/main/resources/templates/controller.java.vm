@@ -1,0 +1,101 @@
+package ${package.Controller};
+
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import $!{cfg.commonPackage}.constant.ErrorCode;
+import $!{cfg.commonPackage}.controller.BaseController;
+import $!{cfg.commonPackage}.model.PageParam;
+import $!{cfg.commonPackage}.model.Result;
+import $!{cfg.commonPackage}.utils.BeanConverter;
+import $!{cfg.parentPackage}.dto.$!{entity}Dto;
+import $!{cfg.parentPackage}.entity.$!{entity};
+import $!{cfg.parentPackage}.param.$!{entity}Param;
+import $!{cfg.parentPackage}.service.$!{entity}Service;
+import $!{cfg.parentPackage}.vo.$!{entity}Vo;
+import $!{cfg.parentPackage}.wrapper.$!{entity}Wrapper;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * $!{table.comment} 前端控制器
+ *
+ * @author $!{author}
+ * @date $!{date}
+ */
+@Api(value = "$!{table.comment}", tags = "$!{table.comment}")
+@RestController
+@RequestMapping("$!{cfg.moduleName}/${table.entityPath}")
+@AllArgsConstructor
+public class $!{entity}Controller extends BaseController {
+
+    private $!{entity}Service service;
+
+    private $!{entity}Wrapper wrapper;
+
+    @GetMapping("detail/{id}")
+    @ApiOperation(value = "详情", notes = "传入Id")
+    public Result detail(@PathVariable Integer id) {
+        $!{entity} detail = service.getById(id);
+        return Result.success().data(wrapper.entityVO(detail));
+    }
+
+    @ApiOperation(value = "列表", notes = "列表")
+    @GetMapping("list")
+    public Result list($!{entity}Param param) {
+        List< $!{entity}> list =  service.list(param);
+        return Result.success().data(wrapper.listVO(list));
+    }
+
+    @ApiOperation("分页/列表")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "size", value = "分页大小", dataType = "int"),
+            @ApiImplicitParam(name = "current", value = "页码", dataType = "int"),
+            @ApiImplicitParam(name = "listMode", value = "集合模式，不进行分页直接返回所有结果集", dataType = "boolean")
+    })
+    @GetMapping("page")
+    public Result page(PageParam pageParam, boolean listMode, $!{entity}Param param) {
+        Page page = pageParam.getPage();
+        if (listMode) {
+            page.setSize(-1);
+        }
+        Page<$!{entity}> ret = service.page(page, param);
+        return Result.success().data(wrapper.pageVO(ret));
+    }
+
+    @ApiOperation("创建")
+    @PostMapping("create")
+    public Result create(@RequestBody $!{entity}Vo vo) {
+        $!{entity}Dto obj = BeanConverter.convert(vo, $!{entity}Dto.class, "id");
+        service.save(obj);
+        return Result.success();
+    }
+
+    @ApiOperation("更新")
+    @PutMapping("update")
+    public Result update(@RequestBody $!{entity}Vo vo) {
+        if (null == vo.getId()) {
+            return Result.fail().code(ErrorCode.PRIMARY_KEY_IS_NULL.getCode());
+        }
+        $!{entity} obj = service.getById(vo.getId());
+        if (null == obj) {
+            return Result.fail().code(ErrorCode.DATA_NOT_EXIST.getCode());
+        }
+        obj = BeanConverter.convert(vo, obj);
+        service.updateById(obj);
+        return Result.success();
+    }
+
+    @ApiOperation("删除,多个id用','分割")
+    @DeleteMapping("delete/{id}")
+    public Result delete(@PathVariable String id)  {
+        String[] ids = id.split(",");
+        service.removeByIds(Arrays.asList(ids));
+        return Result.success();
+    }
+}

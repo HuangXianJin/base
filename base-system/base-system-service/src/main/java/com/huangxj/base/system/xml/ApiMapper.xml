@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huangxj.base.system.mapper.ApiMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, api_code, api_name, api_category, api_desc, request_method, content_type, service_id, path, priority, status, create_id, create_time, modify_id, modify_time, is_persist, is_auth, is_open, class_name, method_name
+    </sql>
+    <!-- 自定义关联查询分页 -->
+    <select id="select" resultType="com.huangxj.base.system.dto.ApiDto">
+        SELECT <include refid="Base_Column_List" />
+        FROM sys_api
+        <where>
+            <if test="queryParam.filter != null and queryParam.filter != ''">
+                and concat(
+                IFNULL(api_name, ''),
+                IFNULL(request_method, ''),
+                IFNULL(service_id, ''),
+                IFNULL(path, '')
+                ) like concat('%',#{queryParam.filter},'%')
+            </if>
+        </where>
+    </select>
+</mapper>

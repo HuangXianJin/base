@@ -1,0 +1,19 @@
+#服务器端口
+server:
+  port: 8200
+
+spring:
+  #数据源配置
+  datasource:
+    url: jdbc:mysql://192.168.2.249:3306/ers?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true&autoReconnect=true
+    username: root
+    password: 123456
+
+  rabbitmq:
+    host: 192.168.2.248
+    port: 5672
+    username: admin
+    password: 123456
+
+badge:
+  localhost: 192.168.2.248

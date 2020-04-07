@@ -1,0 +1,27 @@
+#set($wrapperPackage=$package.Entity.replace("entity","wrapper"))
+package $!{wrapperPackage};
+
+import org.springframework.stereotype.Component;
+import $!{package.Entity}.$!{entity};
+#set($voPackage=$package.Entity.replace("entity","vo"))
+import $!{voPackage}.$!{entity}Vo;
+import ${cfg.commonPackage}.wrapper.BaseEntityWrapper;
+import ${cfg.commonPackage}.utils.BeanConverter;
+
+/**
+ * $!{table.comment}包装类,返回视图层所需的字段
+ *
+ * @author $!{author}
+ * @since $!{date}
+ */
+@Component
+public class $!{entity}Wrapper extends BaseEntityWrapper<$!{entity}, $!{entity}Vo>  {
+
+	@Override
+	public $!{entity}Vo entityVO($!{entity} $!{table.entityPath}) {
+		$!{entity}Vo $!{table.entityPath}Vo =  BeanConverter.convert($!{table.entityPath}, $!{entity}Vo.class);
+
+		return $!{table.entityPath}Vo;
+	}
+
+}

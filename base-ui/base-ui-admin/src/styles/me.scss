@@ -1,0 +1,679 @@
+@charset "utf-8";
+
+
+/*无*/
+.nothing {
+  text-align: center;
+  color: #999;
+  margin: 30px;
+  font-size: 14px;
+}
+
+.nothing .nothing_img {
+  font-size: 80px;
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+
+.nothing .nothing_name {
+  color: #999;
+}
+
+.nothing .nothing_step {
+  margin-bottom: 30px;
+}
+
+.nothing_all {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wins_nothing {
+  width: 200px;
+  line-height: 20px;
+  height: 160px;
+  text-align: center;
+  margin: 0 auto;
+  color: #999;
+  margin-top: -30px;
+}
+
+.wins_nothing .nothing_img {
+  font-size: 80px;
+  margin-bottom: 5px;
+}
+
+.wins_nothing .nothing_name {
+  color: #999;
+}
+
+
+/*纯文字*/
+.sameword .mess {
+  padding: 10px 15px;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  color: #323232;
+}
+
+.sameword .mess .mess_left {
+  position: relative;
+  margin-right: 10px;
+}
+
+.sameword .mess .mess_right {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.sameword .red {
+  color: red;
+}
+
+.sameword_four .mess .mess_left {
+  width: 70px;
+}
+
+.sameword .small {
+  margin-bottom: 10px;
+}
+
+.sameword .small_default {
+  font-weight: bold;
+  color: red;
+}
+
+.sameword .small_tips {
+  color: #666;
+}
+
+.sameword .uploadmyfile .tips {
+  margin-top: 0 !important;
+}
+
+/*活动详情*/
+.activityDetail {
+  height: 600px;
+}
+
+.activityDetail .el-tabs__item {
+  font-size: 15px;
+  font-weight: bold;
+  color: #323232;
+}
+
+.activityDetail .el-tabs__item.is-active {
+  color: #409EFF !important;
+}
+
+.activityDetail .topicFirst .mess {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #323232;
+}
+
+.activityDetail .topicFirst .mess .mess_left {
+  position: relative;
+  margin-right: 10px;
+}
+
+.activityDetail .topicFirst .mess .mess_right {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.activityDetail .topicFirst_six .mess .mess_left {
+  width: 100px;
+  text-align: left;
+}
+
+.activityDetail .topicFirst .applyfinish .mess {
+  margin-bottom: 0 !important;
+}
+
+.activityDetail .topicFirst .applyfinish .mess .mess_right .el-form-item__content {
+  margin-left: 0 !important;
+  line-height: 0 !important;
+}
+
+.activityDetail .topicFirst .messcontrol {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.activityDetail .topicSecond {
+  font-size: 15px;
+  color: #323232;
+  line-height: 30px;
+  text-indent: 2em;
+}
+
+.activityDetail .topicThird ul {
+  clear: both;
+  margin: 0;
+  padding: 0;
+}
+
+.activityDetail .topicThird ul li {
+  list-style: none;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #323232;
+}
+
+.activityDetail .topicThird ul li .mess_name {
+  color: #ff4400;
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+.activityDetail .topicThird .iconfont {
+  margin-right: 5px;
+}
+
+
+/*搜索条件*/
+.myfindscreen .mysearch {
+  width: 100%;
+  background: red;
+}
+
+.myfindscreen .mysearch .mysearch_input {
+  width: calc(100% - 80px);
+  float: left;
+}
+
+.myfindscreen .mysearch .el-button--small {
+  display: inline-block;
+  float: left;
+}
+
+.myfindscreen .mysearch .el-input__inner {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.myfindscreen .mysearch .el-button--small {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: none;
+}
+
+.findscreen_wins {
+  width: 90% !important;
+  margin: 0 auto !important;
+}
+
+/**/
+.smalltab .el-tabs__item {
+  height: 34px;
+  line-height: 34px;
+}
+
+.smalltab .el-tabs--card>.el-tabs__header .el-tabs__nav {
+  border-radius: 0;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  overflow: hidden;
+}
+
+/**/
+#app .sidebar-container .svg-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+/*左固右*/
+.mymanage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.mymanage .mymanage_left {
+  position: fixed;
+  width: 300px;
+  padding-right: 15px;
+  height: calc(100% - 120px);
+  border-right: 1px solid #ebeef5;
+}
+
+.mymanage .mymanage_left_tab {
+  height: calc(100% - 170px) !important;
+}
+
+.mymanage .mymanage_right {
+  margin-left: 320px;
+}
+
+.mymanage .mymanagescroll {
+  width: 100%;
+  height: 100%;
+}
+
+.mymanage .mymanagescroll .el-scrollbar__wrap {
+  overflow-x: hidden;
+}
+
+.mymanage .mymanage_left .mytree {
+  margin-top: 20px;
+}
+
+.is-active .mymanage .mymanage_left {
+  left: 55px;
+}
+
+/*弹窗表单*/
+.sameform {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.sameform_upload .uploadmess {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.sameform_upload .uploadcontrol {
+  clear: both;
+  float: right;
+}
+
+.sameform_upload .uploadcontrol .iconfont {
+  margin-right: 5px;
+}
+
+.sameform .el-date-editor.el-input,
+.sameform .el-date-editor.el-input__inner {
+  width: 100%;
+}
+
+.sameform .sameform_tips {
+  margin-bottom: 15px;
+}
+
+.sameform .choicetips {
+  line-height: 32px;
+}
+
+.sameform .choicetips .red {
+  margin: 0 5px;
+}
+
+.sameform .choicetips .el-button {
+  margin-left: 10px;
+}
+
+.sameform .smallitem .itemdesc {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.sameform .smallitem .itemdesc .itemdesc_icon {
+  position: absolute;
+  top: -18px;
+  right: -10px;
+  font-size: 14px;
+  z-index: 2;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.sameform .smallitem .itemdescadd .el-button {
+  font-size: 12px;
+}
+
+.sameform .smallitem .itemdescadd .el-button--small.is-circle {
+  padding: 8px;
+}
+
+.sameform .el-cascader {
+  width: 100%;
+}
+
+.sameform_mytips {
+  margin-bottom: 20px;
+}
+
+.sameformbig {
+  width: 96%;
+}
+
+.sameformbig .fullappyly .el-form-item__content {
+  margin-left: 0 !important;
+}
+
+.sameformbig .full_selecttwo {
+  width: 100%;
+}
+
+.sameformbig .full_selecttwo .el-form-item {
+  float: left;
+}
+
+.sameformbig .full_selecttwo .el-form-item--small .el-form-item__content {
+  margin-left: 20px !important;
+}
+
+.sameformbig .full_selecttwo .el-form-item--small:first-child .el-form-item__content {
+  margin-left: 100px !important;
+}
+
+.sameformbig .full_selecttwo .el-input {
+  width: 250px !important;
+}
+
+.sameformbig .full_selecttwo .el-button--small.is-circle {
+  padding: 8px;
+}
+
+.sameformbig .full_selecttwo .addsmallicon {
+  margin-left: 20px;
+}
+
+// .sameform_special .el-col-12{height: 51px !important;}
+.sameformbig .smalllist .list {
+  float: left;
+  width: 600px;
+  line-height: 32px;
+  height: 32px;
+  margin: 0 auto 15px auto;
+  display: block;
+  padding: 4px 0;
+}
+
+.sameformbig .smalllist .list_addbtn {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sameformbig .list_addbtn .el-button--small.is-circle {
+  padding: 10px;
+}
+
+.sameformbig .smalllist .list_mess {
+  width: 170px;
+  margin: 0 10px 0 0;
+  height: 34px;
+  border: 1px solid #dcdfe6;
+}
+
+.sameformbig .smalllist .list_mess:first-child {
+  width: 200px;
+}
+
+.sameformbig .smalllist .list_del {
+  font-size: 18px;
+  line-height: 34px;
+  color: #999;
+  margin-left: 10px;
+  cursor: pointer;
+  float: left;
+}
+
+.sameformbig .smalllist .list .el-form-item__content {
+  margin-left: 0 !important
+}
+
+.sameformbig .smalllist .list_mess .el-input__inner {
+  border: none;
+  padding: 4px auto;
+}
+
+.sameformbig>.el-row>.el-col-12 {
+  width: 50%;
+  height: 50px;
+}
+
+.sameformbig .speciallist .el-form-item--small .el-form-item__content,
+.sameformbig .speciallist .el-form-item--small .el-form-item__label {
+  height: 32px;
+}
+
+.sameform .choicetwotime .starttime,
+.sameform .choicetwotime .endtime {
+  float: left;
+  width: 160px;
+}
+
+.sameform .choicetwotime .tagtime {
+  float: left;
+  width: 20px;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.sameform .el-autocomplete {
+  width: 100%;
+}
+
+.sameform .myeditorbox .el-form-item__content {
+  max-height: 400px !important;
+  overflow-y: auto !important;
+}
+
+.sameform .myeditorbox .vue-html5-editor>.content {
+  max-height: 300px;
+}
+
+.sameform .myeditorbox_plan .el-form-item__content {
+  width: 950px !important;
+}
+
+.sameform .myeditorbox_paint .vue-html5-editor>.content {
+  padding: 0 !important;
+  height: 110px !important;
+}
+
+.sameform .myeditorbox_paint_true {
+  margin-bottom: 0 !important;
+}
+
+.sameform .myeditorbox_paint_true .el-form-item__content {
+  width: 580px;
+  height: 110px;
+  overflow: hidden !important;
+  background: #f5f5f5;
+}
+
+.myeditorbox_paint_tips {
+  color: #d81e06;
+}
+
+.sameform .myeditorbox_paint_true .el-form-item__content {
+  line-height: normal !important;
+}
+
+
+.red {
+  color: red !important;
+}
+
+.green {
+  color: #67c23a !important;
+}
+
+.blue {
+  color: #409eff !important;
+}
+
+/*表单(ME)*/
+.myform {
+  width: 96%;
+  margin: 0 auto;
+}
+
+.myform .mess {
+  padding: 10px 0;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.myform .mess .must {
+  color: red !important;
+  font-size: 14px !important;
+  margin-right: 2px;
+  vertical-align: middle;
+}
+
+.myform .mess .mess_left {
+  position: relative;
+  width: 80px;
+  line-height: 32px;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+.myform .mess .mess_right {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.myformtwo .mess .mess_left {
+  width: 60px;
+}
+
+.myformthree .mess .mess_left {
+  width: 70px;
+}
+
+.myformfive .mess .mess_left {
+  width: 90px;
+}
+
+.myformsix .mess .mess_left {
+  width: 100px;
+}
+
+.myform .messtop {
+  -webkit-box-align: normal;
+  -webkit-align-items: normal;
+  align-items: normal;
+}
+
+.myform .mess .simpledel .closebtn {
+  float: right;
+  line-height: 32px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #666;
+}
+
+.myform .mess .simpledel .item .addlistbtn {
+  color: #409EFF;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.myform .mess .simpledel .item {
+  margin-bottom: 15px;
+}
+
+.myform .mess .simpledel .item .el-form-item {
+  margin-bottom: 0;
+}
+
+.myform .mess .simpledel .item .el-form-item,
+.myform .mess .simpledel .item .el-form-item__content {
+  width: 100%;
+}
+
+/*搜索条件*/
+.findscreen .sameinput {
+  width: 180px;
+}
+
+.findscreen .sameinput_sgc {
+  width: 240px;
+}
+
+.findscreen .el-button--small {
+  margin-left: 10px;
+  height: 32px;
+}
+
+.findscreen .el-button span {
+  margin-left: 5px !important;
+}
+
+.findscreen .el-cascader--small,
+.findscreen .el-select,
+.findscreen .filter-item,
+.findscreen .el-range-editor--small.el-input__inner,
+.findscreen .el-date-editor--date {
+  vertical-align: top !important;
+}
+
+.findscreen .el-cascader {
+  line-height: 28px !important;
+}
+
+.findscreen .mysearch {
+  height: 32px;
+  display: inline-block;
+  width: 300px;
+}
+
+.findscreen .mysearch .sameinput {
+  float: left;
+  width: 220px;
+}
+
+.findscreen .mysearch .sameinput input {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.findscreen .mysearch .el-button {
+  float: left;
+  margin-left: 0;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.mytree .el-button--small.is-circle {
+  padding: 5px;
+}
+
+.mytree .el-tree-node__content {
+  height: 30px;
+  margin-bottom: 2px;
+}

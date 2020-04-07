@@ -1,0 +1,19 @@
+#set($paramPackage=$package.Entity.replace("entity","param"))
+package $!{paramPackage};
+
+#if($!{entityLombokModel})
+import lombok.Data;
+#end
+
+/**
+ * $!{table.comment}查询参数
+ *
+ * @author $!{author}
+ * @since $!{date}
+ */
+#if($!{entityLombokModel})
+@Data
+#end
+public class $!{entity}Param {
+    private String filter;
+}
