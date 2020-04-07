@@ -1,7 +1,7 @@
 # 基础框架
 
 ## 基础开发环境
-* JDK: 1.8
+* JDK: 11
 * Maven: 3.3+
 * MySql: 5.7+
 * rabbitmq:3.7
