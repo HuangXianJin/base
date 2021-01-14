@@ -42,7 +42,7 @@
         <apache.commons-lang3.version>3.5</apache.commons-lang3.version>
         <apache.commons-io.version>2.5</apache.commons-io.version>
         <apache.commons.beanutils>1.9.3</apache.commons.beanutils>
-        <apache.poi.verison>3.14</apache.poi.verison>
+        <apache.poi.verison>4.1.2</apache.poi.verison>
 
         <!-- 推荐使用Harbor -->
         <docker.registry.url>192.168.2.248</docker.registry.url>
