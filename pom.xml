@@ -40,7 +40,7 @@
         <hutool.version>5.2.5</hutool.version>
         <!--apache-->
         <apache.commons-lang3.version>3.5</apache.commons-lang3.version>
-        <apache.commons-io.version>2.5</apache.commons-io.version>
+        <apache.commons-io.version>2.7</apache.commons-io.version>
         <apache.commons.beanutils>1.9.3</apache.commons.beanutils>
         <apache.poi.verison>3.14</apache.poi.verison>
 
